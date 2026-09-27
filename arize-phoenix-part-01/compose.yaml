@@ -1,0 +1,17 @@
+services:
+  phoenix:
+    # Convenient for local exploration; pin a tested release in production.
+    image: arizephoenix/phoenix:latest
+    ports:
+      # Expose the UI and HTTP trace collector only on this computer.
+      - "127.0.0.1:6006:6006"
+    environment:
+      # Put Phoenix's local data in the directory mounted below.
+      PHOENIX_WORKING_DIR: /mnt/data
+    volumes:
+      # Keep local database files when the container is replaced.
+      - phoenix_data:/mnt/data
+
+volumes:
+  # Docker manages this persistent volume; it is not a backup.
+  phoenix_data:

@@ -1,8 +1,0 @@
-arize-phoenix-otel
-openinference-instrumentation-langchain
-langgraph
-langchain-openai
-openai
-fastapi
-uvicorn
-opentelemetry-instrumentation-fastapi
